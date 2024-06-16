@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+    <!-- start loading -->
+    <div id="loading">
+        <p>pleas wait page loading ...</p>
+    </div>
+     {% include 'base/header.html' %}
+    <!-- start hero -->
+    <section id="hero">
+        <div class="inner-banner" style="background-image:url(../static/assets/images/banner-gallery.jpg)">
+            <div class="container">
+                <h3 class="title">Oreo<br><strong>Gallery</strong></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <section class="main-section">
+
+        <!-- FAQs -->
+        <div class="img-gallery">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title col-12" data-aos="fade-right">
+                        <h2><span>View</span> our best Gallery</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                       {% for gallery in galleries %}
+                        <div class="col-lg-4 col-md-12">
+                        <div class="popup-gallery">
+                            <div class="popup-gallery"> 
+                                <a class="popup2" href="">
+                                    <img src="{{ gallery.image_for_Gallery.url }}" alt="pic">
+                                    <span class="eye-wrapper">
+                                        <i class="zmdi zmdi-eye"></i>
+                                    </span>
+                                </a> 
+                            </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAQs -->
+
+    </section>
+
+    <!-- start footer -->
+     {% include 'base/footer.html' %}
+</div>
+<!-- start screpting -->
+
+{% endblock %}

@@ -1,199 +1,271 @@
+
 {% extends 'base/base.html' %}
 
-{% block content %}
+
+{% load static %}
 
 
-<div class="wrapper">
-    <!-- start loading -->
-    <div id="loading">
-        <p>pleas wait page loading ...</p>
+  {% block content %}
+
+
+
+
+<!--Start Preloader -->
+{#<div class="preloader"></div>#}
+<!--End Preloader --> 
+
+<!--Start header area-->
+
+<!--Start top bar area-->
+      {% include 'base/topbararea.html' %}
+<!--End top bar area-->
+
+<!--Start header area--> 
+<section class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{% static 'images/resources/logo.png' %}" alt="Awesome Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="header-right">
+                    <ul>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-technology"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h4>Call us now</h4>
+                                <span>+1-888-987-6543</span>    
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-pin"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h4>121 Park Drive</h4>
+                                <span>Varick St, Newyork 1006</span>    
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-agenda"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h4>Mon - Satday</h4>
+                                <span>09.00am to 18.00pm</span>    
+                            </div>
+                        </li>        
+                    </ul>
+                    <div class="search-button pull-right">
+                        <div class="toggle-search">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-     {% include 'base/header.html' %}
-    <!-- start hero -->
-    <section id="hero">
-        <div class="inner-banner" style="background-image:url(../static/assets/images/banner-department.jpg)">
-            <div class="container">
-                <h3 class="title">Oreo Hospital<br><big><strong>Departments</strong></big></h3>
-            </div>
-        </div>
-    </section>
+</section>   
+<!--End header area-->  
 
-    <!-- Content Area -->
-    <section class="main-section">
-
-        <!-- Departments List -->
-        <div class="department-list">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="department-box box-img-cnt" data-aos="fade-up" data-aos-duration="6000">
-                            <div class="box-img"><img src="../static/assets/images/department-1.jpg" alt=""></div>
-                            <div class="box-cnt">
-                                <h4>CARDIOLOGY</h4>
-                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
-                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
-                            </div>
+<!--Start header-search  area-->
+<section class="header-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="search-form pull-right">
+                    <form action="#">
+                        <div class="search">
+                            <input type="search" name="search" value="" placeholder="Search">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="department-box box-img-cnt" data-aos="fade-up" data-aos-duration="5000">
-                            <div class="box-img"><img src="../static/assets/images/department-2.jpg" alt=""></div>
-                            <div class="box-cnt">
-                                <h4>PULMONOLOGY</h4>
-                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
-                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="department-box box-img-cnt" data-aos="fade-up" data-aos-duration="3000">
-                            <div class="box-img"><img src="../static/assets/images/department-3.jpg" alt=""></div>
-                            <div class="box-cnt">
-                                <h4>GYNECOLOGY</h4>
-                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
-                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="department-box box-img-cnt" data-aos="fade-up" data-aos-duration="4000">
-                            <div class="box-img"><img src="../static/assets/images/department-4.jpg" alt=""></div>
-                            <div class="box-cnt">
-                                <h4>NEUROLOGY</h4>
-                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
-                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="department-box box-img-cnt" data-aos="fade-up" data-aos-duration="4000">
-                            <div class="box-img"><img src="../static/assets/images/department-5.jpg" alt=""></div>
-                            <div class="box-cnt">
-                                <h4>UROLOGY</h4>
-                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
-                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="department-box box-img-cnt" data-aos="fade-up" data-aos-duration="3000">
-                            <div class="box-img"><img src="../static/assets/images/department-6.jpg" alt=""></div>
-                            <div class="box-cnt">
-                                <h4>Detal</h4>
-                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
-                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- Departments List -->
+    </div>
+</section>
+<!--End header-search  area-->        
 
-        <!-- Home Why choose us -->
-        <div class="why-choose-us">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title col-12" data-aos="fade-right">
-                        <h2><span>Why </span>Choose Us</h2>
-                        <p>Description text here...</p>
-                    </div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="common-cnt">
-                            <div class="section-top" data-aos="fade-down">
-                                <p>Our goal is to make sure<br>
-                                    with advances in <br>
-                                    technology</p>
-                            </div>
-                            <p data-aos="fade-down" data-aos-duration="3000">Professional dental clinic 32roDent offers the whole range of dentistry services:
-                                treatment of caries, gum diseases, tooth whitening, implantation, dentures (crowns
-                                installation), surgery, correction (braces) etc.</p>
-                            <p>
-                                <a class="btn btn-primary btn-round" data-aos="flip-up">More about practice</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="box-img" data-aos="fade-left" data-aos-duration="3000">
-                            <img src="../static/assets/images/why-choose-img.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Home Why choose us -->
+<!--Start mainmenu area-->
+       {% include 'base/mainmenu.html' %}
+<!--End mainmenu area-->
 
-        <!-- Blog -->
-        <div class="home-blog">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title col-12" data-aos="fade-right">
-                        <h2><span>Latest </span>From Blog</h2>
-                        <p>Description text here...</p>
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area" style="background-image: url({% static 'images/resources/breadcrumb-bg.jpg' %});">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="breadcrumbs">
+	                <h1>Departments</h1>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="breadcrumb-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left pull-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            <li class="active">Departments</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-box">
-                            <div class="blog-img">
-                                <img src="assets/images/blog-1.png" alt="">
-                            </div>
-                            <div class="blog-cnt">
-                                <h5><a href="javascript:void(0);">How to handle your kids’ from Lorem ipsum dolor sit amet</a></h5>
-                                <p>The great explorer of the truth, master builder of human happiness one rejects,
-                                    dislikes[...]</p>
-                            </div>
-                            <div class="blog-info">
-                                <span class="blog-date"><i class="zmdi zmdi-calendar"></i> 02 Feb 2018</span>
-                                <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment ( 25 )</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-box">
-                            <div class="blog-img">
-                                <img src="assets/images/blog-2.png" alt="">
-                            </div>
-                            <div class="blog-cnt">
-                                <h5><a href="javascript:void(0);">How to handle your kids’ from Lorem ipsum dolor sit amet</a></h5>
-                                <p>The great explorer of the truth, master builder of human happiness one rejects,
-                                    dislikes[...]</p>
-                            </div>
-                            <div class="blog-info">
-                                <span class="blog-date"><i class="zmdi zmdi-calendar"></i> 02 Feb 2018</span>
-                                <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment ( 25 )</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-box">
-                            <div class="blog-img">
-                                <img src="..static/assets/images/blog-3.png" alt="">
-                            </div>
-                            <div class="blog-cnt">
-                                <h5><a href="javascript:void(0);">How to handle your kids’ from Lorem ipsum dolor sit amet</a></h5>
-                                <p>The great explorer of the truth, master builder of human happiness one rejects,
-                                    dislikes[...]</p>
-                            </div>
-                            <div class="blog-info">
-                                <span class="blog-date"><i class="zmdi zmdi-calendar"></i> 02 Feb 2018</span>
-                                <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment ( 25 )</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="right pull-right">
+                        <a href="#">
+                            <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span> 
+                        </a>   
+                    </div>    
                 </div>
             </div>
         </div>
-        <!-- Blog -->
+    </div>
+</section>
+<!--End breadcrumb area-->
 
-    </section>
+<!--Start Medical Departments area-->
+<section class="medical-departments-area departments-page">
+    <div class="container">
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-cardiology"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Cardiology</h3>
+                        <p>How all this mistaken al idea of denouncing pleasure praisings pain was complete.</p>
+                    </div>
+                    <a class="readmore" href="cardiac-clinic.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item--> 
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-vagina"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Pulmonology</h3>
+                        <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who avoids a pain.</p>
+                    </div>
+                    <a class="readmore" href="pulmonology.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-neurology"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Gynecology</h3>
+                        <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who avoids a pain.</p>
+                    </div>
+                    <a class="readmore" href="gynecology.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item--> 
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-lungs"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Neurology</h3>
+                        <p>How all this mistaken al idea of denouncing pleasure praisings pain was complete.</p>
+                    </div>
+                    <a class="readmore" href="neurology.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item-->          
+        </div>
+        
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-kidneys"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Urology</h3>
+                        <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who avoids a pain.</p>
+                    </div>
+                    <a class="readmore" href="urology.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item--> 
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-heart"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Gastrology</h3>
+                        <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who avoids a pain.</p>
+                    </div>
+                    <a class="readmore" href="gastrology.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-stethoscope-1"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Pediatrician</h3>
+                        <p> There anyone loves pursue or desires to obtain pain sed of itself because pain occasionally.</p>
+                    </div>
+                    <a class="readmore" href="pediatrician.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item--> 
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-item text-center">
+                    <div class="iocn-holder">
+                        <span class="flaticon-research"></span>    
+                    </div>
+                    <div class="text-holder">
+                        <h3>Laboratory</h3>
+                        <p> Take a trivial example, which of ever undertake laborous physically exercise some advantage.</p>
+                    </div>
+                    <a class="readmore" href="laborotory.html">Read More</a>
+                </div>
+            </div> 
+            <!--End single item-->          
+        </div>
+    </div>
+</section>
+<!--End Medical Departments area--> 
 
-    <!-- start footer -->
-     {% include 'base/footer.html' %}
+
+
+
+
+<!--Start footer area-->  
+{% include 'base/footer.html' %}
+<!--End footer area-->
+
+<!--Start footer bottom area-->
+<!--End footer bottom area-->
+
 </div>
-<!-- start screpting -->
-
 
 {% endblock %}

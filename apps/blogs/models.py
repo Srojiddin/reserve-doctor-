@@ -39,3 +39,12 @@ class Gallery(models.Model):
         upload_to='gallery/',
         verbose_name="Фото",
     )
+
+
+    def __str__(self):
+        return f"Gallery Image {self.id}"
+
+class Contact(models.Model):
+    ...
+
+

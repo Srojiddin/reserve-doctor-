@@ -1,0 +1,780 @@
+
+{% extends 'base/base.html' %}
+
+
+{% load static %}
+
+
+  {% block content %}
+
+<!--Start Preloader -->
+{#<div class="preloader"></div>#}
+<!--End Preloader --> 
+
+<!--Start header area-->
+
+<!--Start top bar area-->
+      {% include 'base/topbararea.html' %}
+<!--End top bar area-->
+
+<!--Start header area-->
+       {% include 'base/header.html' %}
+<!--End header area-->
+
+<!--Start header-search  area-->
+<!--End header-search  area-->
+
+<!--Start mainmenu area-->
+      {% include 'base/mainmenu.html' %}
+<!--End mainmenu area-->
+
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area" style="background-image: url({% static 'images/resources/breadcrumb-bg.jpg' %});">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="breadcrumbs">
+	                <h1>Time Table</h1>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="breadcrumb-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left pull-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            <li class="active">Time Table</li>
+                        </ul>
+                    </div>
+                    <div class="right pull-right">
+                        <a href="#">
+                            <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span> 
+                        </a>   
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start time table area-->
+<div class="time-table-area">
+    <div class="container">
+        <div class="row pd-bottom">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="selectmenu">
+                            <option selected="selected">Select Department</option>
+                            <option>Cardiology</option>
+                            <option>Pulmonology</option>
+                            <option>Gynecology</option>
+                            <option>Neurology</option>
+                            <option>Urology</option>
+                            <option>Gastrology</option>
+                            <option>Pediatrician</option>
+                            <option>Laboratory</option>
+                        </select>  
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-box">
+                            <input type="text" name="date" placeholder="Select Date" id="datepicker">
+                            <div class="icon-box">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                        </div>  
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="time-table">
+                        <thead>
+                            <tr>
+                                <th>Time / Days</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>08.00 - 09.00</span>
+                                        <p>am</p>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>09.00 - 10.00</span>
+                                        <p>am</p>
+                                    </div>
+                                </td>
+                                
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>10.00 - 11.00</span>
+                                        <p>am</p>
+                                    </div>
+                                </td>
+                                
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>11.00 - 12.00</span>
+                                        <p>am</p>
+                                    </div>
+                                </td>
+                                
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>12.00 - 1.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>1.00 - 2.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>2.00 - 3.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>3.00 - 4.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>4.00 - 5.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                 <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>5.00 - 6.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-1">
+                                    <div class="inner-content text-center">
+                                        <h5>Pediatric</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="single-box time">
+                                    <div class="inner-content text-center">
+                                        <span>6.00 - 7.00</span>
+                                        <p>pm</p>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-3">
+                                    <div class="inner-content text-center">
+                                        <h5>Neurology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Tomas</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box white">
+                                    <div class="inner-content text-center">
+                                        <span class="blank"></span>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-2">
+                                    <div class="inner-content text-center">
+                                        <h5>Cardiology</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                                <td class="single-box bgclr-4">
+                                    <div class="inner-content text-center">
+                                        <h5>Pulmonary</h5>
+                                        <span>08.00am -9.00am</span>
+                                        <p>Dr. Williamson</p>
+                                        <h6 class="level">Level: <span>Beginner</span></h6>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End time table area-->
+ 
+<!--Start footer area-->
+      {% include 'base/footer.html' %}
+<!--End footer area-->
+
+<!--Start footer bottom area-->
+<!--End footer bottom area-->
+
+</div>
+
+ {% endblock %}

@@ -5,9 +5,10 @@ from django.views import generic
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.csrf import csrf_protect
+# from apps.users.models import Account
 
 from apps.doctors.models import Doctor
-from apps.users.forms import UserCreationForm, UserUpdateForm, UserRegisterForm, UserLoginForm
+from apps.users.forms import UserCreationForm, UserUpdateForm, RegisterForm, UserLoginForm
 from django.views.generic import DeleteView, TemplateView
 from django.contrib.auth.models import User
 from django.views import View
@@ -74,6 +75,7 @@ class RegisterView(View):
             login(request, user)
             return redirect(reverse_lazy('home'))
         return render(request, 'users/register.html', {'form': form})
+
 
 class LoginView(View):
     def get(self, request):

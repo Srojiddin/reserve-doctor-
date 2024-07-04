@@ -58,8 +58,14 @@ INSTALLED_APPS = [
     'corsheaders',
 ] + [
    'rest_framework_simplejwt',
-  ]
-
+] + [
+    'apps.schedules',
+] + [
+    'apps.products',
+] + [
+    'apps.cart',
+] + [ 'django.template.defaultfilters',
+]
 
 
 

@@ -5,6 +5,7 @@ from apps.appointments.forms import AppointmentCreateFrom, AppointmentDetailForm
 from django.urls import reverse_lazy
 from apps.appointments.models import Appointment, Doctor, Category
 
+
 class AppointmentList(generic.ListView):
     model = Appointment
     template_name = 'appointments/contact.html'

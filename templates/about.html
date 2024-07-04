@@ -1,323 +1,673 @@
+
 {% extends 'base/base.html' %}
 
 
-{% block content %}
-
-{% load static%}
+{% load static %}
 
 
-<div class="wrapper">
-    <!-- start loading -->
-    <div id="loading">
-        <p>pleas wait page loading ...</p>
+  {% block content %}
+
+<!--Start Preloader -->
+{#<div class="preloader"></div>#}
+<!--End Preloader --> 
+
+<!--Start header area-->
+
+<!--Start top bar area-->
+      {% include 'base/topbararea.html' %}
+<!--End top bar area-->
+
+<!--Start header area-->
+{% include 'base/header.html' %}
+<!--End header area-->
+
+<!--Start header-search  area-->
+<!--End header-search  area-->
+
+<!--Start mainmenu area-->
+ {% include 'base/mainmenu.html' %}
+<!--End mainmenu area-->
+
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area" style="background-image: url({% static 'images/resources/breadcrumb-bg.jpg' %});">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="breadcrumbs">
+	                <h1>About Us</h1>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="breadcrumb-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left pull-left">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            <li class="active">About Us</li>
+                        </ul>
+                    </div>
+                    <div class="right pull-right">
+                        <a href="#">
+                            <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span> 
+                        </a>   
+                    </div>    
+                </div>
+            </div>
+        </div>
     </div>
-     {% include 'base/header.html' %}
-    <!-- start hero -->
-    <section id="hero">
-        <div class="inner-banner" style="background-image:url({% static 'assets/images/banner-about.jpg' %})">
-            <div class="container">
-                <h3 class="title">About Us<br><big>Oreo <strong>Hospital</strong></big></h3>
-            </div>
-        </div>
-    </section>
+</section>
+<!--End breadcrumb area-->
 
-    <!-- Content Area -->
-    <section class="main-section">
-
-        <!-- About Us Section -->
-        <div class="about-us-section">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title col-12" data-aos="fade-right">
-                        <h2><span>About </span>Us</h2>
-                        <p>Description text here...</p>
-                    </div>
+<!--Start welcome area-->
+<section class="welcome-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img-holder">
+                    <img src="{% static 'images/resources/welcome.jpg' %}" alt="Awesome Image">
                 </div>
-                <div class="row justify-content-between">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="box-img box-shadow" data-aos="fade-up">
-                            <img src="assets/images/about-page-img.jpg" alt="">
-                            <span class="section-line" data-aos="fade-right"></span>
-                        </div>
+                <div class="inner-content">
+                    <p>As a tertiary referral ICU to provide state of the art care with the help of very good professionals and infrastructure.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-holder">
+                    <div class="title">
+                        <h1>Welcome to the Hospitals</h1>
+                        <p>It is a long established fact that a reader will be distracted by the readable content more or less normal distribution of letters opposed.</p>    
                     </div>
-                    <div class="col-md-7 col-sm-6">
-                        <div class="page-text">
-                            <div class="section-top" data-aos="fade-up" data-aos-duration="4000">
-                                <p><strong>Oreo Hospital</strong> isIt is a long established fact that a reader will be
-                                    distracted by the readable content.</p>
-                            </div>
-                            <p data-aos="fade-up" data-aos-duration="4000">It is a long established fact that a reader will be distracted by the readable content
-                                more or less normal distribution of letters opposed.</p>
-                            <div class="mission-vision" data-aos="fade-up" data-aos-duration="4000">
-                                <div class="grp-area mission">
-                                    <i class="zmdi zmdi-favorite"></i>
-                                    <h5>Our Mission</h5>
-                                    <p>Reader will be distracted by the readable content of a page when looking at its
-                                        layout the point of using more or less normal distribution.</p>
+                    <ul>
+                        <li>
+                            <div class="single-item">
+                                <div class="iocn-box">
+                                    <span class="flaticon-shapes"></span>
                                 </div>
-                                <div class="grp-area vision">
-                                    <i class="zmdi zmdi-eye"></i>
-                                    <h5>Our Vision</h5>
-                                    <p>Reader will be distracted by the readable content of a page when looking at its
-                                        layout the point of using more or less normal distribution.</p>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <i class="zmdi zmdi-thumb-up"></i>
-                                            <p>Idea of denouncing pleasure and praising.</p>
-                                        </li>
-                                        <li>
-                                            <i class="zmdi zmdi-thumb-up"></i>
-                                            <p>Pleasure and praising pain was complete system.</p>
-                                        </li>
-                                    </ul>
+                                <div class="text-box">
+                                    <h3>Our Mission</h3>
+                                    <p>Reader will be distracted by the readable content of a page when looking at its layout the point of using more or less normal distribution.</p>
                                 </div>
                             </div>
-                            <div class="opening-hours" data-aos="fade-up" data-aos-duration="4000">
-                                <h6><i class="zmdi zmdi-time"></i> Opening Hours</h6>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <label><i class="zmdi zmdi-chevron-right"></i> Saturday</label>
-                                        <span>9:00 - 20:00</span>
-                                    </li>
-                                    <li>
-                                        <label><i class="zmdi zmdi-chevron-right"></i> Sunday</label>
-                                        <span>9:00 - 20:00</span>
-                                    </li>
-                                    <li>
-                                        <label><i class="zmdi zmdi-chevron-right"></i> Monday - Friday</label>
-                                        <span>9:00 - 20:00</span>
-                                    </li>
-                                </ul>
+                        </li>
+                        <li>
+                            <div class="single-item">
+                                <div class="iocn-box">
+                                    <span class="flaticon-technology-2"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>Our Vision</h3>
+                                    <p>Explain to you how all this mistaken idea of denouncing pleasure.</p>
+                                    <div class="text">
+                                        <p><i class="fa fa-hand-o-right"></i>Idea of denouncing pleasure and praising.</p>    
+                                        <p><i class="fa fa-hand-o-right"></i>Pleasure and praising pain was complete system.</p>    
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="button">
+                        <a class="thm-btn bgclr-1" href="#">Our Departments</a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+<!--End welcome area-->
+ 
+<!--Start special features area-->
+<section class="special-features-area">
+    <div class="container">
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-item">
+                    <div class="icon-box">
+                        <span class="flaticon-transport"></span>    
+                    </div>
+                    <div class="text-box">
+                        <h3>24 Hrs Ambulance</h3>
+                        <p>How all this mistaken idea denoucing pleasure and praisings pain was born complete account expound.</p>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-item">
+                    <div class="icon-box">
+                        <span class="flaticon-drink"></span>    
+                    </div>
+                    <div class="text-box">
+                        <h3>Food & Dietry</h3>
+                        <p>There anyone who loves or pursues or to obtain pain of itself, because it is but because occasionally.</p>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-item">
+                    <div class="icon-box">
+                        <span class="flaticon-avatar"></span>    
+                    </div>
+                    <div class="text-box">
+                        <h3>Special Nurses</h3>
+                        <p>Pursues or desires to obtain pain itself, because is pain, because occasionally circumstances occur procure.</p>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+        </div>
+        <div class="row">   
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-item">
+                    <div class="icon-box">
+                        <span class="flaticon-church"></span>    
+                    </div>
+                    <div class="text-box">
+                        <h3>Places of Worship</h3>
+                        <p>Undertakes laborious physical exercise, except to obtain some advantage from it but who has any right.</p>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-item">
+                    <div class="icon-box">
+                        <span class="flaticon-phone"></span>    
+                    </div>
+                    <div class="text-box">
+                        <h3>Customer Support</h3>
+                        <p>Undertakes laborious physical exercise, except to obtain some advantage from it but who has any right.</p>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-item">
+                    <div class="icon-box">
+                        <span class="flaticon-medical-2"></span>    
+                    </div>
+                    <div class="text-box">
+                        <h3>Very Fast Aid</h3>
+                        <p>Pursues or desires to obtain pain itself, because is pain, because occasionally circumstances occur procure.</p>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+        </div>    
+    </div>
+</section> 
+<!--End special features area-->
+
+<!--Start slogan area-->
+<section class="slogan-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title pull-left">
+                    <h2>If you are a patient seeking quality healthcare at affordable prices!.</h2>
+                </div>
+                <div class="button pull-right">
+                    <a class="thm-btn bgclr-1" href="#">Make an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+<!--End slogan area-->
+
+<!--Start project faq area-->
+<section class="project-faq-area sec-padding">
+    <div class="container">
+        <div class="sec-title mar0auto text-center">
+            <h1>Photo Gallery & FAQ’s</h1>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="latest-project">
+                    <!--Start single blog post-->
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="{% static 'images/projects/latest-project-1.jpg' %}" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <!--End single blog post-->
+                    <!--Start single blog post-->
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="{% static 'images/projects/latest-project-2.jpg' %}" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single blog post-->
+                    <!--Start single blog post-->
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="{% static 'images/projects/latest-project-3.jpg' %}" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single blog post-->
+                    <!--Start single blog post-->
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="{% static 'images/projects/latest-project-4.jpg' %}" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single blog post-->
+                    <!--Start single blog post-->
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="{% static 'images/projects/latest-project-5.jpg' %}" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single blog post-->
+                    <!--Start single blog post-->
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="{% static 'images/projects/latest-project-6.jpg' %}" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single blog post-->
+                </div>    
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="faq-content">
+                    <div class="accordion-box">
+                        <!--Start single accordion box-->
+                        <div class="accordion accordion-block">
+                            <div class="accord-btn">
+                                <h4>Where is the hospital located?</h4>
+                            </div>
+                            <div class="accord-content">
+                                <p>A Patient Centered Medical Home is a model of healthcare delivery in which care is tailored to the needs & preferences of patients, the Patient Centered Medical  model encourages.</p>
+                            </div>
+                        </div>
+                        <!--End single accordion box--> 
+                        <!--Start single accordion box-->
+                        <div class="accordion accordion-block">
+                            <div class="accord-btn active">
+                                <h4>What is the deposit amount for admission?</h4>
+                            </div>
+                            <div class="accord-content collapsed">
+                                <p>A Patient Centered Medical Home is a model of healthcare delivery in which care is tailored to the needs & preferences of patients, the Patient Centered Medical  model encourages.</p>
+                            </div>
+                        </div>
+                        <!--End single accordion box-->
+                        <!--Start single accordion box-->
+                        <div class="accordion accordion-block last">
+                            <div class="accord-btn last">
+                                <h4>What are the visiting hours?</h4>
+                            </div>
+                            <div class="accord-content">
+                                <p>A Patient Centered Medical Home is a model of healthcare delivery in which care is tailored to the needs & preferences of patients, the Patient Centered Medical  model encourages.</p>
+                            </div>
+                        </div>
+                        <!--End single accordion box-->
+                        <!--Start single accordion box-->
+                        <div class="accordion accordion-block">
+                            <div class="accord-btn">
+                                <h4>How many visitors are allowed at a time?</h4>
+                            </div>
+                            <div class="accord-content">
+                                <p>A Patient Centered Medical Home is a model of healthcare delivery in which care is tailored to the needs & preferences of patients, the Patient Centered Medical  model encourages.</p>
+                            </div>
+                        </div>
+                        <!--End single accordion box-->
                     </div>
                 </div>
             </div>
         </div>
-        <!-- About Us Section -->
+    </div>
+</section>
+<!--End project faq area--> 
 
-        <!-- Why choose us -->
-        <div class="what-we-do">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title col-12" data-aos="fade-right">
-                        <h2><span>Why </span>Choose Us</h2>
-                        <p>Description text here...</p>
+<!--Start fact counter area-->
+<section class="fact-counter-area black-bg" style="background-image:url({% static 'images/resources/fact-counter-bg-v2.jpg' %});">
+    <div class="container">
+        <div class="sec-title text-center">
+            <h1>Keep <span>your headup</span> & be patient</h1>
+            <p>How all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the<br> system and expound the actual teachings of the great.</p>
+        </div>
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul>
+                    <li>
+                        <div class="single-item text-center">
+                            <div class="icon-holder">
+                                <span class="flaticon-medical"></span> 
+                            </div>
+                            <h1><span class="timer" data-from="1" data-to="25" data-speed="5000" data-refresh-interval="50">25</span></h1>
+                            <h3>Years of Experience</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-item text-center">
+                            <div class="icon-holder">
+                                <span class="flaticon-smile"></span> 
+                            </div>
+                            <h1><span class="timer" data-from="1" data-to="284" data-speed="5000" data-refresh-interval="50">284</span></h1>
+                            <h3>Well Smiley Faces</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-item text-center">
+                            <div class="icon-holder">
+                                <span class="flaticon-medical-1"></span> 
+                            </div>
+                            <h1><span class="timer" data-from="1" data-to="176" data-speed="5000" data-refresh-interval="50">176</span></h1>
+                            <h3>Heart Transplant</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-item text-center">
+                            <div class="icon-holder">
+                                <span class="flaticon-ribbon"></span> 
+                            </div>
+                            <h1><span class="timer" data-from="1" data-to="142" data-speed="5000" data-refresh-interval="50">142</span></h1>
+                            <h3>Awards Holded</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--End single item-->
+     
+        </div>
+    </div>
+</section>
+<!--End fact counter area-->
+
+<!--Start team area-->
+<section class="team-area doctor">
+    <div class="container">
+        <div class="sec-title mar0auto text-center">
+            <h1>Meet Our Doctors</h1>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <div class="img-holder">
+                        <img src="{% static 'images/team/1.jpg' %}" alt="Awesome Image">
+                        <div class="overlay-style">
+                            <div class="box">
+                                <div class="content">
+                                    <div class="top">
+                                        <h3>Marc Parcival</h3>
+                                        <span>Newyork</span>
+                                    </div>
+                                    <span class="border"></span>
+                                    <div class="bottom">
+                                        <ul>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
+                                        </ul>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Marc Parcival</h3> 
+                            <span>Newyork</span>   
+                        </div>    
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
-                            <i class="zmdi zmdi-account-add"></i>
-                            <h6>Qualified Doctors</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's </p>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <div class="img-holder">
+                        <img src="{% static 'images/team/2.jpg' %}" alt="Awesome Image">
+                        <div class="overlay-style">
+                            <div class="box">
+                                <div class="content">
+                                    <div class="top">
+                                        <h3>Alen Bailey</h3>
+                                        <span>Newyork</span>
+                                    </div>
+                                    <span class="border"></span>
+                                    <div class="bottom">
+                                        <ul>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
+                                        </ul>    
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="text-holder">
+                            <h3>Marc Parcival</h3> 
+                            <span>Newyork</span>   
+                        </div>    
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
-                            <i class="zmdi zmdi-collection-add"></i>
-                            <h6>Blood Bank</h6>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of
-                                a page when looking at</p>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <div class="img-holder">
+                        <img src="{%  static 'images/team/3.jpg' %}" alt="Awesome Image">
+                        <div class="overlay-style">
+                            <div class="box">
+                                <div class="content">
+                                    <div class="top">
+                                        <h3>Basil Andrew</h3>
+                                        <span>Newyork</span>
+                                    </div>
+                                    <span class="border"></span>
+                                    <div class="bottom">
+                                        <ul>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
+                                        </ul>    
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="text-holder">
+                            <h3>Marc Parcival</h3> 
+                            <span>Newyork</span>   
+                        </div>    
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
-                            <i class="zmdi zmdi-hospital-alt"></i>
-                            <h6>Modren Clinic</h6>
-                            <p>How all this mistaken idea denoucing pleasure and praisings pain was born complete
-                                account expound.</p>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <div class="img-holder">
+                        <img src="{% static 'images/team/4.jpg' %}" alt="Awesome Image">
+                        <div class="overlay-style">
+                            <div class="box">
+                                <div class="content">
+                                    <div class="top">
+                                        <h3>Edgar Denzil</h3>
+                                        <span>Newyork</span>
+                                    </div>
+                                    <span class="border"></span>
+                                    <div class="bottom">
+                                        <ul>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
+                                        </ul>    
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="text-holder">
+                            <h3>Edgar Denzil</h3> 
+                            <span>Newyork</span>   
+                        </div>    
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
-                            <i class="zmdi zmdi-thumb-up"></i>
-                            <h6>Emergency</h6>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical</p>
+                </div>
+            </div>
+            <!--End single item-->
+        </div>
+    </div>
+</section> 
+<!--End team area--> 
+
+<!--Start certificates area-->  
+<section class="certificates-area">
+    <div class="container">
+        <div class="sec-title">
+            <h1>Awards & Recognition</h1>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="certificates">
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/1.jpg' %}" alt="Awesome Image">
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
-                            <i class="zmdi zmdi-headset-mic"></i>
-                            <h6>24x7 Service</h6>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration</p>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/2.jpg' %}" alt="Awesome Image">
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
-                            <i class="zmdi zmdi-shield-check"></i>
-                            <h6>Health Care</h6>
-                            <p>How all this mistaken idea denoucing pleasure and praisings pain was born complete
-                                account expound.</p>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/3.jpg' %}" alt="Awesome Image">
                         </div>
-                    </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/4.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/1.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/2.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/3.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/4.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/1.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/2.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/3.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
+                    <!--Start single item-->
+                    <a href="#">
+                        <div class="single-item">
+                            <img src="{% static 'images/certificates/4.jpg' %}" alt="Awesome Image">
+                        </div>
+                    </a>
+                    <!--End single item-->
                 </div>
             </div>
         </div>
-        <!-- Why choose us -->
+    </div>
+</section>
+<!--End certificates area-->  
+  
+<!--Start footer area-->
+{% include 'base/footer.html' %}
+<!--End footer area-->
 
-        <!-- Fun Fact -->
-        <div class="fun-fact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="fun-fact-box text-center">
-                            <i class="zmdi zmdi-account"></i>
-                            <span class="counter timer" data-from="0" data-to="652" data-speed="2500" data-fresh-interval="700">652</span>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="fun-fact-box text-center">
-                            <i class="zmdi zmdi-favorite"></i>
-                            <span class="counter timer" data-from="0" data-to="7652" data-speed="2500" data-fresh-interval="700">7652</span>
-                            <p>Heart Transplant</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="fun-fact-box text-center">
-                            <i class="zmdi zmdi-thumb-up"></i>
-                            <span class="counter timer" data-from="0" data-to="52" data-speed="2500" data-fresh-interval="700">52</span>
-                            <p>Years Of Experience</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="fun-fact-box text-center">
-                            <i class="zmdi zmdi-mood"></i>
-                            <span class="counter timer" data-from="0" data-to="7652" data-speed="2500" data-fresh-interval="700">7652</span>
-                            <p>Well Smiley Faces</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fun Fact -->
+<!--Start footer bottom area-->
+<!--End footer bottom area-->
 
-        <!-- Our Location -->
-{#        <div class="our_location">#}
-{#            <div class="container">#}
-{#                <div class="row justify-content-between">#}
-{#                    <div class="section-title col-4" data-aos="fade-right">#}
-{#                        <h2><span>Our </span>Location</h2>#}
-{#                        <p>Description text here...</p>#}
-{#                    </div>#}
-{#                    <div class="section-title col-7" data-aos="fade-left">#}
-{#                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="row">#}
-{#                    <div class="col-lg-12 col-md-12">#}
-{#                        <div id="world-map-markers" style="height:380px;"></div>#}
-{#                    </div>#}
-{#                    <div class="col-lg-12 col-md-12">                        #}
-{#                        <ul class="row location_list list-unstyled">#}
-{#                            <li class="col-lg-2 col-md-4 col-6">#}
-{#                                <div class="body xl-turquoise">#}
-{#                                    <i class="zmdi zmdi-pin"></i>#}
-{#                                    <h4 class="counter timer" data-from="0" data-to="453" data-speed="2500" data-fresh-interval="700">453</h4>#}
-{#                                    <span>America</span>#}
-{#                                </div>#}
-{#                            </li>#}
-{#                            <li class="col-lg-2 col-md-4 col-6">#}
-{#                                <div class="body xl-khaki">#}
-{#                                    <i class="zmdi zmdi-pin"></i>#}
-{#                                    <h4 class="counter timer" data-from="0" data-to="124" data-speed="2500" data-fresh-interval="700">124</h4>#}
-{#                                    <span>Australia</span>#}
-{#                                </div>#}
-{#                            </li>#}
-{#                            <li class="col-lg-2 col-md-4 col-6">#}
-{#                                <div class="body xl-parpl">#}
-{#                                    <i class="zmdi zmdi-pin"></i>#}
-{#                                    <h4 class="counter timer" data-from="0" data-to="215" data-speed="2500" data-fresh-interval="700">215</h4>#}
-{#                                    <span>Canada</span>#}
-{#                                </div>#}
-{#                            </li>#}
-{#                            <li class="col-lg-2 col-md-4 col-6">#}
-{#                                <div class="body xl-salmon">#}
-{#                                    <i class="zmdi zmdi-pin"></i>#}
-{#                                    <h4 class="counter timer" data-from="0" data-to="155" data-speed="2500" data-fresh-interval="700">155</h4>#}
-{#                                    <span>India</span>#}
-{#                                </div>#}
-{#                            </li>#}
-{#                            <li class="col-lg-2 col-md-4 col-6">#}
-{#                                <div class="body xl-blue">#}
-{#                                    <i class="zmdi zmdi-pin"></i>#}
-{#                                    <h4 class="counter timer" data-from="0" data-to="78" data-speed="2500" data-fresh-interval="700">78</h4>#}
-{#                                    <span>UK</span>#}
-{#                                </div>#}
-{#                            </li>#}
-{#                            <li class="col-lg-2 col-md-4 col-6">#}
-{#                                <div class="body xl-slategray">#}
-{#                                    <i class="zmdi zmdi-pin"></i>#}
-{#                                    <h4 class="counter timer" data-from="0" data-to="55" data-speed="2500" data-fresh-interval="700">55</h4>#}
-{#                                    <span>Other</span>#}
-{#                                </div>#}
-{#                            </li>                      #}
-{#                        </ul>                        #}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-        <!-- Our Location -->
-
-        <!-- Our Team -->
-        <div class="our-team about-team">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="section-title left col-lg-4" data-aos="fade-right">
-                        <h2><span>Meet </span>Our Team</h2>
-                        <p>Description text here...</p>
-                    </div>
-                    <div class="section-title right col-lg-8" data-aos="fade-left">
-                        <p><span class="color-212121">Oreo Hospital</span> The wise man therefore always holds in these
-                            matters to this principle of selection: he rejects pleasures to secure.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
-                            <div class="doctor-pic"><img src="{% static 'assets/images/team-member-01.png' %}" alt="{{ doctor.name }}"div>
-                            <div class="doctor-info">
-                                <h4>{{ doctor.name }}<span>{{ doctor.choosing_a_specialization }}</span></h4>
-                                <ul class="clearfix">
-                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                </ul>
-                                <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                        <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
-                            <div class="doctor-pic"><img src="assets/images/team-member-04.png" alt="Dr. Charlie"></div>
-                            <div class="doctor-info">
-                                <h4>Dr. Charlie<span>Dentist</span></h4>
-                                <ul class="clearfix">
-                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                </ul>
-                                <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-            </div>
-        </div> 
-        <!-- Our Team -->
-
-    </section>
-
-    <!-- start footer -->
-     {% include 'base/footer.html' %}
 </div>
-<!-- start screpting -->
-</body>
-</html>
-
 
 {% endblock %}

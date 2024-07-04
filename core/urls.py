@@ -26,7 +26,10 @@ urlpatterns = [
     path('', include('apps.users.urls')),
     path('', include('apps.appointments.urls')),
     path('', include('apps.categories.urls')),
-    path('', include('apps.blogs.urls'))
+    path('', include('apps.blogs.urls')),
+    path('', include('apps.schedules.urls')),
+    path('', include('apps.products.urls')),
+    path('', include('apps.cart.urls'))
 ]
 urlpatterns += api_urlpatterns
 

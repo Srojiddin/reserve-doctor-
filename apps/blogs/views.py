@@ -1,8 +1,8 @@
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views import generic
-from apps.blogs.models import Blog,Departments,About,Gallery
+from apps.blogs.models import Blog,Departments,About,Gallery,Contact
 from apps.blogs.forms import BlogCreateForm, BlogUpdateForm, BlogDeleteForm
-
 
 
 class BlogCreateView(generic.CreateView):
@@ -14,8 +14,30 @@ class BlogCreateView(generic.CreateView):
 
 class BlogListView(generic.ListView):
     model = Blog
-    template_name = 'blog.html'
-    context_object_name = 'posts'
+    template_name = 'blog-default.html'
+    context_object_name = 'blogs'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = BlogCreateForm()
+        return context
+
+
+class BlogLargeView(generic.ListView):
+    model = Blog
+    template_name = 'blog-large.html'
+    context_object_name = 'blogs'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = BlogCreateForm()
+        return context
+
+
+class BlogSingleView(generic.ListView):
+    model = Blog
+    template_name = 'blog-single.html'
+    context_object_name = 'blogs'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -57,5 +79,22 @@ class AboutUsView(generic.TemplateView):
 
 class GalleryListView(generic.ListView):
     model = Gallery
-    template_name = 'galary.html'
-    context_object_name = "galleries"
+    template_name = 'project.html'
+    context_object_name = 'blogs'
+
+
+class GalleryDetailView(generic.DetailView):
+    model = Gallery
+    template_name = 'project-single.html'
+    context_object_name = 'gallery'
+    pk_url_kwarg = 'pk'
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     return context
+    #
+
+
+class ContactListView(generic.ListView):
+    model = Contact
+    template_name = 'contact.html'

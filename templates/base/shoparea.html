@@ -1,0 +1,228 @@
+{% load static %}
+<section class="shop-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 pull-right">
+                <div class="shop-content">
+                    <div class="row showing-result-shorting">
+                        <div class="col-md-12">
+                            <div class="shorting pull-right">
+                                <select class="selectmenu">
+                                    <option selected="selected">Default Sorting</option>
+                                    <option>Default Sorting one</option>
+                                    <option>Default Sorting Two</option>
+                                    <option>Default Sorting Three</option>
+                                </select>
+                            </div>
+                            <div class="showing pull-left">
+                                <p>Showing 1-9 of 12 results</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for medicine in products %}
+                        <!--Start single product item-->
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="single-product-item">
+                                <div class="img-holder">
+                                    <img src="{{ medicine.image_for_medicine.url}}" alt="Awesome Product Image">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a class="thm-btn bgclr-1" href="../shopping-cart.html">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <div class="top clearfix">
+                                        <div class="product-title pull-left">
+                                            <h5>{{ medicine.name }}</h5>
+                                        </div>
+                                        <div class="review-box pull-right">
+{#                                            <ul>#}
+{#                                                <li><i class="fa fa-star"></i></li>#}
+{#                                                <li><i class="fa fa-star"></i></li>#}
+{#                                                <li><i class="fa fa-star"></i></li>#}
+{#                                                <li><i class="fa fa-star"></i></li>#}
+{#                                                <li><i class="fa fa-star"></i></li>#}
+{#                                            </ul>#}
+                                        </div>
+                                    </div>
+                                    <div class="product-value">
+                                        <h4>{{ medicine.price_for_medicine }}</h4>
+                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                        <!--Start single product item-->
+                        <!--End single product item-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="post-pagination text-center">
+                                <li><a href="#"><i class="fa fa-caret-left" aria-hidden="true"></i></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Start sidebar Wrapper-->
+            <div class="col-lg-3 col-md-7 col-sm-7 col-xs-12 pull-left">
+                <div class="sidebar-wrapper">
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <form class="search-form" action="#">
+							<input placeholder="Search..." type="text">
+							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</form>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Categories</h3>
+                        </div>
+                        <ul class="categories clearfix">
+                            <li><a href="#">Fitness Kit <span>(6)</span></a></li>
+                            <li><a href="#">Healthy Foods <span>(2)</span></a></li>
+                            <li><a href="#">Accessories <span>(5)</span></a></li>
+                            <li><a href="#">Electronic Scales <span>(10)</span></a></li>
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Filter By Price</h3>
+                        </div>
+                        <div class="price-ranger">
+                            <div id="slider-range"></div>
+                            <div class="ranger-min-max-block">
+                                <input type="submit" value="Filter">
+                                <span>Price:</span>
+                                <input type="text" readonly class="min">
+                                <span>-</span>
+                                <input type="text" readonly class="max">
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--End single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Popular Products</h3>
+                        </div>
+                        <ul class="popular-product">
+                            <li>
+                                <div class="img-holder">
+                                    <img src="{% static 'images/shop/product-thumb-1.jpg' %}" alt="Awesome Image">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <a href="#">
+                                        <h4>Injection Vial</h4>
+                                    </a>
+                                    <h5>$34.99</h5>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-holder">
+                                    <img src="images/shop/product-thumb-2.jpg" alt="Awesome Image">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <a href="#">
+                                        <h4>Supplement Tab</h4>
+                                    </a>
+                                    <h5>$29.00</h5>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-holder">
+                                    <img src="images/shop/product-thumb-3.jpg" alt="Awesome Image">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <a href="#">
+                                        <h4>Smiley Ball-24</h4>
+                                    </a>
+                                    <h5>$24.99</h5>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+                </div>
+            </div>
+            <!--End Sidebar Wrapper-->
+        </div>
+    </div>
+</section>

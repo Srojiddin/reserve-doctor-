@@ -1,149 +1,218 @@
+
 {% extends 'base/base.html' %}
 
 
-{% block content %}
+{% load static %}
 
 
-<div class="wrapper">
-    <!-- start loading -->
-    <div id="loading">
-        <p>pleas wait page loading ...</p>
-    </div>
+  {% block content %}
+
+
+
+
+</head>
+<body>
+<div class="boxed_wrapper">
+
+<!--Start Preloader -->
+{#<div class="preloader"></div>#}
+<!--End Preloader --> 
+
+<!--Start header area-->
+
+<!--Start top bar area-->
+    {% include 'base/topbararea.html' %}
+<!--End top bar area-->
+
+<!--Start header area-->
     {% include 'base/header.html' %}
-    <!-- start hero -->
-    <section id="hero">
-        <div class="inner-banner" style="background-image:url(../static/assets/images/banner-contactus.jpg)">
-            <div class="container">
-                <h3 class="title">Oreo <br><big><strong>Contact Us</strong></big></h3>
+<!--End header area-->
+
+<!--Start header-search  area-->
+<!--End header-search  area-->
+
+<!--Start mainmenu area-->
+    {% include 'base/mainmenu.html' %}
+<!--End mainmenu area-->
+
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area" style="background-image: url({% static 'images/resources/breadcrumb-bg.jpg' %});">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="breadcrumbs">
+	                <h1>Contact Us</h1>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="breadcrumb-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left pull-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            <li class="active">Contact Us</li>
+                        </ul>
+                    </div>
+                    <div class="right pull-right">
+                        <a href="#">
+                            <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span> 
+                        </a>   
+                    </div>    
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!--End breadcrumb area-->
 
-    <!-- Content Area -->
-    <section class="main-section">
-
-        <!-- Contact Section -->
-        <div class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title col-12" data-aos="fade-right">
-                        <h2><span>Get Touch </span>With Us</h2>
-                        <p>Description text here...</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-sm-6">
-                        <div class="contact-form">
-                            <div class="row">
-                                <div class="col-sm-12 appoitntment-title">Make an Appointment</div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Email">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Phone">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 textarea">
-                                    <div class="form-group">
-                                        <textarea class="form-control" placeholder="Your Message.."></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <button class="btn btn-primary btn-round">Submit</button>
-                                </div>
+<!--Start contact form area-->
+<section class="contact-form-area">
+    <div class="container">
+        <div class="sec-title">
+            <h1>Get Touch With Us</h1>
+            <span class="border"></span>
+            <div class="select-box pull-right">
+                <select class="text-capitalize selectpicker form-control required" name="form_subject" data-style="g-select" data-width="100%">
+                    <option>Newyork Campus</option>
+                    <option>Canada Campus</option>
+                    <option>UK Campus</option>
+                    <option>USA Campus</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-7">
+                <div class="contact-form">
+                    <form id="contact-form" name="contact_form" class="default-form" action="inc/sendmail.php" method="post">
+                        <h2>Make an Appointment</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="form_name" value="" placeholder="Your Name*" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="form_email" value="" placeholder="Your Mail*" required="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="contact-sidebar">
-                            <h4>Quick Contact</h4>
-                            <p>If you have any questions simply use the following contact details.</p>
-                            <ul class="list-unstyled add-grp">
-                                <li>
-                                    <i class="zmdi zmdi-pin"></i>
-                                    <p>121, Park Drive, Varick Str<br>New York, NY 10012, USA</p>
-                                </li>
-                                <li>
-                                    <i class="zmdi zmdi-phone"></i>
-                                    <p>+ (123) 0200 12345,<br>+ 1800-45-678-9012</p>
-                                </li>
-                                <li>
-                                    <i class="zmdi zmdi-email"></i>
-                                    <p>Mailus@hospitalteam.com</p>
-                                </li>
-                            </ul>
-                            <ul class="list-unstyled social-icon clearfix">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="zmdi zmdi-google-plus-box"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="zmdi zmdi-pinterest-box"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a>
-                                </li>
-                            </ul>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="form_phone" value="" placeholder="Phone">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="form_subject" value="" placeholder="Subject">
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="form_message" placeholder="Your Message.." required=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                <button class="thm-btn bgclr-1" type="submit" data-loading-text="Please wait...">send message</button>
+                            </div>
+                        </div>
+                    </form>  
                 </div>
             </div>
-        </div>
-        <!-- Contact Section -->
-
-        <!-- Contact Map -->
-        <div class="map-main">
-            <img src="../static/assets/images/map.jpg" alt="">
-        </div>
-        <!-- Contact Map -->
-
-        <!-- Our Partner -->
-        <div class="our-partner">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title col-12" data-aos="fade-right">
-                        <h2><span>Our </span>Partners</h2>
-                        <p>Description text here...</p>
+            <div class="col-lg-4 col-md-5">
+                <div class="quick-contact">
+                    <div class="title">
+                        <h2>Quick Contact</h2>
+                        <p>If you have any questions simply use the following contact details.</p>
                     </div>
-                </div>
-                <div class="row out-partner-logo">
-                    <div class="col-lg-2 col-md-6 col-sm-6"><a href="javascript:void(0);"><img src="../static/assets/images/partner-logo-1.png" alt=""></a></div>
-                    <div class="col-lg-2 col-md-6 col-sm-6"><a href="javascript:void(0);"><img src="../static/assets/images/partner-logo-2.png" alt=""></a></div>
-                    <div class="col-lg-2 col-md-6 col-sm-6"><a href="javascript:void(0);"><img src="../static/assets/images/partner-logo-3.png" alt=""></a></div>
-                    <div class="col-lg-2 col-md-6 col-sm-6"><a href="javascript:void(0);"><img src="../static/assets/images/partner-logo-4.png" alt=""></a></div>
-                    <div class="col-lg-2 col-md-6 col-sm-6"><a href="javascript:void(0);"><img src="../static/assets/images/partner-logo-1.png" alt=""></a></div>
-                    <div class="col-lg-2 col-md-6 col-sm-6"><a href="javascript:void(0);"><img src="../static/assets/images/partner-logo-5.png" alt=""></a></div>
-                </div>
+                    <ul class="contact-info">
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-pin"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Address:</span> 121, Park Drive, Varick Str<br>New York, NY 10012, USA</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-technology"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Phone:</span> (123) 0200 12345 &<br>1800-45-678-9012</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-interface"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Email:</span> Mailus@hospitalteam.com</h5>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>    
             </div>
+            
         </div>
-        <!-- Contact Map -->
+    </div>
+</section>
+<!--End contact form area-->  
 
-    </section>
+<!--Start contact map area-->
+<section class="contact-map-area">
+    <div class="container-fluid">
+        <div class="google-map-inner">
+            <div 
+                class="google-map" 
+                id="contact-google-map" 
+                data-map-lat="44.529688" 
+                data-map-lng="-72.933009" 
+                data-icon-path="images/resources/map-marker.png" 
+                data-map-title="Brooklyn, New York, United Kingdom" 
+                data-map-zoom="12" 
+                data-markers='{
+                    "marker-1": [44.529688, -72.933009, "<h4>Head Office</h4><p>44/77 Alabama, a western U.S.A</p>"]
+                }'>
+            </div>
+        </div>  
+    </div>
+</section>
+<!--End contact map area-->
 
-    <!-- start footer -->
-   {% include 'base/footer.html' %}
+<!--Start footer area-->
+    {% include 'base/footer.html' %}
+<!--End footer area-->
+
+<!--Start footer bottom area-->
+{#<section class="footer-bottom-area">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-md-8">#}
+{#                <div class="copyright-text">#}
+{#                    <p>Copyrights © 2017 All Rights Reserved, Powered by <a href="#">Hospitals.</a></p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-4">#}
+{#                <ul class="footer-social-links">#}
+{#                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>#}
+{#                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--End footer bottom area-->
+
 </div>
-<!-- start screpting -->
-<
+
 {% endblock %}

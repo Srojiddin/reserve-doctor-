@@ -119,56 +119,50 @@
                 <div class="inner-content">
                     <div class="title-box text-center">
                         <span class="flaticon-calendar"></span>
-                        <h2>Make an Appointment</h2>    
+                        <h2>Make an Appointment</h2>
                     </div>
                     <div class="form-holder clearfix">
-                        <form id="appointment" class="clearfix" name="appointment-form" action="inc/sendmail.php" method="post">
-                            <div class="single-box mar-right-30">    
+                        <form id="appointment" class="clearfix" name="appointment-form" action="{% url 'create-appointments' %}" method="post">
+                            {% csrf_token %}
+                            <div class="single-box mar-right-30">
                                 <div class="input-box">
-                                    <input type="text" name="form_name" value="" placeholder="Your Name" required="">
+                                    <input type="text" name="fullname" id="Appointment.fullname" value="" placeholder="Your Name" required>
                                 </div>
                                 <div class="input-box">
-                                    <select class="selectmenu">
+                                    <select name="choosing_a_doctor" class="selectmenu">
                                         <option selected="selected">Select Doctor</option>
-                                        <option>Marc Parcival</option>
-                                        <option>Alen Bailey</option>
-                                        <option>Basil Andrew</option>
-                                        <option>Giles Franklin</option>
-                                        <option>Edgar Denzil</option>
-                                        <option>Garfield Feris</option>
-                                    </select>  
+                                        {% for doctor in doctors %}
+                                            <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
                             </div>
-                            <div class="single-box">    
-                                <div class="input-box">  
-                                    <select class="selectmenu">
+                            <div class="single-box">
+                                <div class="input-box">
+                                    <select name="choosing_a_disease" class="selectmenu">
                                         <option selected="selected">Select Department</option>
-                                        <option>Cardiology</option>
-                                        <option>Pulmonology</option>
-                                        <option>Gynecology</option>
-                                        <option>Neurology</option>
-                                        <option>Urology</option>
-                                        <option>Gastrology</option>
-                                        <option>Pediatrician</option>
-                                        <option>Laboratory</option>
+                                        {% for doctor in doctors %}
+                                        <option value="{{  doctor.id }}">{{ doctor.choosing_a_specialization }}</option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 <div class="input-box">
-                                    <input type="text" name="date" placeholder="Select Date" id="datepicker">
+                                    <input type="text" name="date_of_reservation" placeholder="Select Date" id="datepicker">
                                     <div class="icon-box">
                                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                                     </div>
-                                </div>       
+                                </div>
                             </div>
-                            <button class="thm-btn bgclr-1" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>    
-                        </form>      
-                    </div> 
-                       
+                            <button class="thm-btn bgclr-1" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 <!--End call to action area-->
 
 <!--Start Medical Departments area-->
@@ -437,125 +431,48 @@
             <span class="border"></span>
         </div>
         <div class="row">
+            {% for doctor in doctors %}
             <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="single-team-member">
                     <div class="img-holder">
-                        <img src="{% static 'images/team/1.jpg' %}" alt="Awesome Image">
+                        <img src="{{ doctor.image_for_doctor.url }}" alt="Awesome Image">
                         <div class="overlay-style">
                             <div class="box">
                                 <div class="content">
                                     <div class="top">
-                                        <h3>Marc Parcival</h3>
-                                        <span>Newyork</span>
+                                        <h3>{{ doctor.name }}</h3>
+                                        <span>{{ doctor.choosing_a_specialization }}</span>
                                     </div>
                                     <span class="border"></span>
                                     <div class="bottom">
                                         <ul>
-                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
-                                        </ul>    
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i> {{ doctor.phone_number }}</li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> {{ doctor.email }}</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="text-holder">
-                            <h3>Marc Parcival</h3> 
-                            <span>Newyork</span>   
-                        </div>    
+                            <h3>{{ doctor.name }}</h3>
+                            <span>{{ doctor.choosing_a_specialization }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
+           {% endfor %}
+        </div>
+    </div>
             <!--End single item-->
             <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-team-member">
-                    <div class="img-holder">
-                        <img src="{% static 'images/team/2.jpg' %}" alt="Awesome Image">
-                        <div class="overlay-style">
-                            <div class="box">
-                                <div class="content">
-                                    <div class="top">
-                                        <h3>Alen Bailey</h3>
-                                        <span>Newyork</span>
-                                    </div>
-                                    <span class="border"></span>
-                                    <div class="bottom">
-                                        <ul>
-                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
-                                        </ul>    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <h3>Marc Parcival</h3> 
-                            <span>Newyork</span>   
-                        </div>    
-                    </div>
-                </div>
-            </div>
+            
             <!--End single item-->
             <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-team-member">
-                    <div class="img-holder">
-                        <img src="{% static 'images/team/3.jpg' %}" alt="Awesome Image">
-                        <div class="overlay-style">
-                            <div class="box">
-                                <div class="content">
-                                    <div class="top">
-                                        <h3>Basil Andrew</h3>
-                                        <span>Newyork</span>
-                                    </div>
-                                    <span class="border"></span>
-                                    <div class="bottom">
-                                        <ul>
-                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
-                                        </ul>    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <h3>Marc Parcival</h3> 
-                            <span>Newyork</span>   
-                        </div>    
-                    </div>
-                </div>
-            </div>
+         
             <!--End single item-->
             <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-team-member">
-                    <div class="img-holder">
-                        <img src="{% static 'images/team/4.jpg' %}" alt="Awesome Image">
-                        <div class="overlay-style">
-                            <div class="box">
-                                <div class="content">
-                                    <div class="top">
-                                        <h3>Edgar Denzil</h3>
-                                        <span>Newyork</span>
-                                    </div>
-                                    <span class="border"></span>
-                                    <div class="bottom">
-                                        <ul>
-                                            <li><i class="fa fa-phone" aria-hidden="true"></i> +321 567 89 0123</li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Bailey@Hospitals.com</li>
-                                        </ul>    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <h3>Edgar Denzil</h3> 
-                            <span>Newyork</span>   
-                        </div>    
-                    </div>
-                </div>
-            </div>
+          
             <!--End single item-->
         </div>
     </div>

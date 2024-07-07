@@ -8,15 +8,13 @@ class Medicine(models.Model):
         max_length=50,
         verbose_name="Название",
     )
-    # description = models.TextField(
-    #     verbose_name="Описание",
-    #     blank=True,
-    #     null=None,
-    # )
-    image_for_medicine = models.ImageField(
-        upload_to='medicine/',
+    description = models.TextField(
+        verbose_name="Описание",
         blank=True,
-        null=True,
+        null=None,
+    )
+    image_for_medicine = models.ImageField(
+        upload_to='medicines/',
         verbose_name="Картинка",
     )
     price_for_medicine = models.DecimalField(
@@ -32,10 +30,6 @@ class Medicine(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Shop(models.Model):
-    ...
 
 
 # class ShopSingle(models.Model):

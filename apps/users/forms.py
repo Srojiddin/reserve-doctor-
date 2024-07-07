@@ -6,6 +6,30 @@ User = get_user_model()
 
 
 
+# class UserRegistrationForm(UserCreationForm):
+#     is_admin = forms.BooleanField(label='Admin', required=False)
+
+#     class Meta:
+#         model = User
+#         fields = ('username', 'password1', 'password2', 'is_admin')
+
+        
+
+class UserRegistrationForm(UserCreationForm):
+    is_admin = forms.BooleanField(label='Admin', required=False)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2', 'is_admin']  # Добавьте 'is_admin' если это нужно
+
+    def clean_is_admin(self):
+        is_admin = self.cleaned_data['is_admin']
+        if is_admin and not self.instance.is_staff:
+            raise forms.ValidationError("Only staff members can register as admins.")
+        return is_admin
+
+
+
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
 

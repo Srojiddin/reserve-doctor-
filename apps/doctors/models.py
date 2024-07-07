@@ -1,10 +1,11 @@
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
 
 from apps.categories.models import Category
 
-from apps.users.models import AbstractUser
+
+
 
 
 class Doctor(models.Model):
@@ -39,13 +40,14 @@ class Doctor(models.Model):
     def __str__(self):
         return self.name
 
-#
+
+
 # class DoctorProfile(models.Model):
-#     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, related_name='doctor_profile')
-#     doctor = models.OneToOneField(Doctor, on_delete=models.CASCADE, related_name='profile')
-#     bio = models.TextField(blank=True)
-#     address = models.CharField(max_length=255, blank=True)
-#     phone_number = models.CharField(max_length=20, blank=True)
-#
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     specialization = models.CharField(max_length=100)
+#     education = models.CharField(max_length=200)
+#     experience = models.IntegerField()
+#     contact_info = models.CharField(max_length=200)
+
 #     def __str__(self):
-#         return f"Profile of {self.user.username}"
+#         return self.user.username

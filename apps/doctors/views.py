@@ -25,31 +25,31 @@ class DoctorCreateView(generic.CreateView):
 
 
 
+# class DoctorListView(generic.ListView):
+#     model = Doctor
+#     template_name = 'doctors.html'
+#     context_object_name = "doctors"
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         grouped_doctors = defaultdict(list)
+#         for doctor in Doctor.objects.select_related('choosing_a_specialization').all():
+#             grouped_doctors[doctor.choosing_a_specialization.name].append(doctor)
+#         context['grouped_doctors'] = dict(grouped_doctors)  # Преобразуем defaultdict в обычный словарь
+#         return context
+
+
 class DoctorListView(generic.ListView):
     model = Doctor
     template_name = 'doctors.html'
     context_object_name = "doctors"
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        grouped_doctors = defaultdict(list)
-        for doctor in Doctor.objects.select_related('choosing_a_specialization').all():
-            grouped_doctors[doctor.choosing_a_specialization.name].append(doctor)
-        context['grouped_doctors'] = dict(grouped_doctors)  # Преобразуем defaultdict в обычный словарь
+        context['form'] = DoctorCreateForm()
+        context['posts'] = Blog.objects.all()
         return context
-
-
-# class DoctorListView(generic.ListView):
-#     model = Doctor
-#     template_name = 'doctors.html'
-#     context_object_name = "doctors"
-#
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['form'] = DoctorCreateForm()
-#         context['posts'] = Blog.objects.all()
-#         return context
 
 
 class DoctorDetailView(generic.DetailView):
@@ -93,3 +93,47 @@ class DoctorDeleteView(generic.DeleteView):
 #     else:
 #         form = DoctorProfileForm(instance=profile)
 #     return render(request, 'profile/edit_profile.html', {'form': form})
+
+
+
+
+def cardiologist_view(request):
+    doctors = Doctor.objects.filter(choosing_a_specialization='cardiologist')
+    return render(request, 'cardiologist.html', {'doctors': doctors})
+
+def gynaecologist_view(request):
+    doctors = Doctor.objects.filter(choosing_a_specialization='gynaecologist')
+    return render(request, 'gynaecologist.html', {'doctors': doctors})
+
+
+
+def neurologist_list(request):
+    neurologists = Doctor.objects.filter(choosing_a_specialization='neurologist')
+    context = {
+        'neurologists': neurologists
+    }
+    return render(request, 'neurologist_list.html', context)
+
+
+def ophthalmologist_list(request):
+    ophthalmologists = Doctor.objects.filter(choosing_a_specialization='ophthalmologist')
+    context = {
+        'ophthalmologists': ophthalmologists
+    }
+    return render(request, 'ophthalmologist_list.html', context)
+
+
+def paediatrician_list(request):
+    paediatricians = Doctor.objects.filter(choosing_a_specialization='paediatrician')
+    context = {
+        'paediatricians': paediatricians
+    }
+    return render(request, 'paediatrician_list.html', context)
+
+
+def practitioner_list(request):
+    practitioners = Doctor.objects.filter(choosing_a_specialization='practitioner')
+    context = {
+        'practitioners': practitioners
+    }
+    return render(request, 'practitioner_list.html', context)

@@ -22,6 +22,7 @@ class Blog(models.Model):
         return self.title
 
 
+
 class Departments(models.Model):
     appellation = models.CharField(
          max_length=100,
@@ -36,8 +37,11 @@ class About(models.Model):
 
 class Gallery(models.Model):
     image_for_Gallery = models.ImageField(
-        upload_to='gallery/',
+        upload_to='blogs',
         verbose_name="Фото",
+    )
+    description = models.CharField(
+        max_length=101,
     )
 
 

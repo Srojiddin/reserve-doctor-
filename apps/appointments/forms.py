@@ -2,11 +2,10 @@ from django import forms
 from apps.appointments.models import Appointment
 
 
-class AppointmentCreateFrom(forms.ModelForm):
+class AppointmentCreateForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = '__all__'
-
+        fields = ['fullname', 'choosing_a_disease', 'choosing_a_doctor', 'date_of_reservation']
 
 class AppointmentDetailForm(forms.ModelForm):
     class Meta:

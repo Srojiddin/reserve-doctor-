@@ -83,16 +83,15 @@ class GalleryListView(generic.ListView):
     context_object_name = 'blogs'
 
 
-class GalleryDetailView(generic.DetailView):
+class GallerySingleView(generic.ListView):
     model = Gallery
     template_name = 'project-single.html'
-    context_object_name = 'gallery'
+    context_object_name = 'blogs'
     pk_url_kwarg = 'pk'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     return context
-    #
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 class ContactListView(generic.ListView):

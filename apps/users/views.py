@@ -63,34 +63,135 @@ class UserDeleteView(DeleteView):
     success_url = '/index.html'
 
 
-class RegisterView(View):
-    def get(self, request):
-        form = UserRegisterForm()
-        return render(request, 'users/register.html', {'form': form})
+# class RegisterView(View):
+#     def get(self, request):
+#         form = UserCreationForm()
+#         return render(request, 'login-form/register.html', {'form': form})
 
-    def post(self, request):
-        form = UserRegisterForm(request.POST)
+#     def post(self, request):
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect(reverse_lazy('home'))
+#         return render(request, 'login-form/register.html', {'form': form})
+
+
+# class LoginView(View):
+#     def get(self, request):
+#         form = UserLoginForm()
+#         return render(request, 'login-form/register.html', {'form': form})
+
+#     def post(self, request):
+#         form = UserLoginForm(request, data=request.POST)
+#         if form.is_valid():
+#             user = form.get_user()
+#             login(request, user)
+#             return redirect('/')
+#         return render(request, 'login-form/register.html', {'form': form})
+
+# @login_required
+# def logout_view(request):
+#     logout(request)
+#     return redirect('home')
+
+
+# Ваш файл views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from .forms import UserRegistrationForm
+
+
+
+# def register(request):
+#     if request.method == 'POST':
+#         form = UserRegistrationForm(request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data['username']
+#             password = form.cleaned_data['password1']
+#             is_admin = form.cleaned_data['is_admin']
+
+#             if is_admin:
+#                 if user.is_staff: 
+#                     user = User.objects.create_superuser(username=username, password=password)
+#                 else:
+#                     return redirect('registration_failed')
+#             else:
+#                 user = User.objects.create_user(username=username, password=password)
+
+#             return redirect('registration_success')
+
+#     else:
+#         form = UserRegistrationForm()
+
+#     return render(request, 'login-form/register.html', {'form': form})
+
+
+
+# def register(request):
+#     if request.method == 'POST':
+#         form = UserRegistrationForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password1')
+#             is_admin = form.cleaned_data.get('is_admin')
+ 
+            
+#             if is_admin:
+#                 if user.is_staff: 
+#                     user = User.objects.create_superuser(username=username, password=password)
+#                 else:
+#                     return redirect('registration_failed')
+#             else:
+#                 user = User.objects.create_user(username=username, password=password)
+
+#             return redirect('index.html')
+
+#             # Автоматически входим пользователя после регистрации
+#             user = authenticate(username=username, password=password)
+#             if user is not None:
+#                 login(request, user)
+#                 return redirect('index.html')  # Замените на ваше имя URL-а успеха
+
+#     else:
+#         form = UserRegistrationForm()
+
+#     return render(request, 'login-form/register.html', {'form': form})
+
+
+# def register(request):
+#     if request.method == 'POST':
+#         form = UserRegistrationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('index')  # Исправлено на ваше имя URL-а успеха
+#     else:
+#         form = UserRegistrationForm()
+
+#     return render(request, 'login-form/register.html', {'form': form})
+
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect(reverse_lazy('home'))
-        return render(request, 'users/register.html', {'form': form})
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password1']
+            is_admin = form.cleaned_data['is_admin']  # Если требуется
 
+            # Создание пользователя
+            user = CustomUser.objects.create_user(username=username, email=email, password=password)
 
-class LoginView(View):
-    def get(self, request):
-        form = UserLoginForm()
-        return render(request, 'users/login.html', {'form': form})
+            # Автоматически входим пользователя после регистрации
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index.html')  # Замените на ваше имя URL-а успеха
 
-    def post(self, request):
-        form = UserLoginForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('/')
-        return render(request, 'users/login.html', {'form': form})
+    else:
+        form = UserRegistrationForm()
 
-@login_required
-def logout_view(request):
-    logout(request)
-    return redirect('home')
+    return render(request, 'login-form/register.html', {'form': form})

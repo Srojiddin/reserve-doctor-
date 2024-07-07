@@ -7,12 +7,12 @@ from apps.cart.models import Cart, Item, Favorite
 from apps.cart.forms import AddToFavoriteForm
 
 
-class CartDetailView(LoginRequiredMixin, ListView):
-    template_name = 'shopping-cart.html'
-    context_object_name = 'cart'
-
-    def get_queryset(self):
-        return get_object_or_404(Cart, user=self.request.user)
+# class CartDetailView(LoginRequiredMixin, ListView):
+#     template_name = 'shopping-cart.html'
+#     context_object_name = 'cart'
+#
+#     def get_queryset(self):
+#         return get_object_or_404(Cart, user=self.request.user)
 
 
 class MinusQuantityView(LoginRequiredMixin, View):

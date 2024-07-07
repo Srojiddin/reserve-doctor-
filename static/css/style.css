@@ -5761,6 +5761,63 @@ input#datepicker {
     font-weight: 300;
 }
 
+/* aaaaaaa */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
 
+.top-bar-area {
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
 
+.top-left p {
+    margin: 0;
+    color: #333333;
+    font-size: 14px;
+}
 
+.top-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 15px 0 0;
+    display: flex;
+}
+
+.social-links li {
+    margin-left: 10px;
+}
+
+.social-links a {
+    color: #333333;
+    font-size: 16px;
+}
+
+.login-button {
+    display: inline-block;
+}
+
+.login-btn {
+    background-color: #1E90FF; 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    border-radius: 25px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}

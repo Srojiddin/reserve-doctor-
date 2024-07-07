@@ -82,23 +82,22 @@
 <section id="project-single-area">
     <div class="container">
         <div class="row">
+             {% for gallery in blogs %}
             <div class="col-md-7">
                 <div class="project-single-carousel">
                     <!--Start single project item-->
                     <div class="single-project-item">
                         <div class="img-holder">
-                            <img src="images/projects/single-project.jpg" alt="Awesome Image">
+                            <img src="{{  gallery.image_for_Gallery.url }}" alt="Awesome Image">
                         </div> 
                     </div>
                     <!--End single project item-->
                 </div>
             </div>
-            <div class="col-md-5">
+            {% comment %} <div class="col-md-5">
                 <div class="project-info">
                     <div class="inner-content">
-                        <p>This formal living room not only needed a focal point but color and style too. Using a high contrast palette of cool grey and blue against the warm cream and wood tones created a dramatic, yet inviting place for lounging and entertaining.</p>
-                        <p>Needed a focal point but color and style too. Using a high us contrast palette of cool grey and blue against the warm cream and wooden tones created a dramatic, yet inviting place for lounging.</p>
-                        <div class="sec-title">
+                        <p>{{ gallery.description }}</p>
                             <h1>Informations</h1>
                             <span class="border"></span>
                         </div>
@@ -115,35 +114,36 @@
                         </li>
                         <li>
                             <div class="icon-holder">
-                                <i class="fa fa-folder-open" aria-hidden="true"></i>
-                            </div>
-                            <div class="text-holder">
-                                <h5>Technology</h5>
-                                <p>Electronic Aspirin</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon-holder">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                            <div class="text-holder">
-                                <h5>Start Date</h5>
-                                <p>21st February 2017</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon-holder">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                            <div class="text-holder">
-                                <h5>End Date</h5>
-                                <p>27th March 2017</p>
-                            </div>
-                        </li>
-                    </ul>
+                                <i class="fa fa-folder-open" aria-hidden="true"></i> {% endcomment %}
+                            {% comment %} </div>
+                            <div class="text-holder"> {% endcomment %}
+{#                                <h5>Technology</h5>#}
+{#                                <p>Electronic Aspirin</p>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <div class="icon-holder">#}
+{#                                <i class="fa fa-calendar" aria-hidden="true"></i>#}
+{#                            </div>#}
+{#                            <div class="text-holder">#}
+{#                                <h5>Start Date</h5>#}
+{#                                <p>21st February 2017</p>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <div class="icon-holder">#}
+{#                                <i class="fa fa-calendar" aria-hidden="true"></i>#}
+{#                            </div>#}
+{#                            <div class="text-holder">#}
+{#                                <h5>End Date</h5>#}
+{#                            <p>27th March 2017</p>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                    </ul>#}
                 </div>
             </div>
         </div>
+    {% endfor %}
         <div class="row bottom">
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="button prev pull-left">

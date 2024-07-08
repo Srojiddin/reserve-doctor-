@@ -9,11 +9,20 @@
             <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                 <div class="top-right clearfix">
                     <ul class="social-links">
+                        <!-- Ссылки на социальные сети (при необходимости) -->
                     </ul>
                     <div class="login-button">
-                        <a href="{%url 'register'%}">
-                            <button class="login-btn">LOGIN</button>
-                        </a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}">
+                                <button class="login-btn">Выход</button>
+                                <p>добавьте сюда что вы хотите</p>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'register' %}">
+                                <button class="login-btn">Вход</button>
+                            </a>
+                        {% endif %}
+                        
                     </div>
                 </div>
             </div>

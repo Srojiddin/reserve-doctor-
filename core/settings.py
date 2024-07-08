@@ -38,35 +38,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + [
+
     'rest_framework',
-] + [
-    'apps.doctors',
-] + [
-    'apps.categories'
-] + [
-    'apps.users',
-] + [
-    'apps.appointments',
-] + [
-    'apps.blogs',
-] + [
     'django_filters',
-] + [
     'drf_yasg',
-] + [
     'corsheaders',
-] + [
-   'rest_framework_simplejwt',
-] + [
+    'rest_framework_simplejwt',
+
+    'apps.doctors',
+    'apps.categories',
+    'apps.users',
+    'apps.appointments',
+    'apps.blogs',
     'apps.schedules',
-] + [
     'apps.products',
-] + [
     'apps.cart',
-] + [ 'django.template.defaultfilters',
+
+    'django.template.defaultfilters',
 ]
 
+AUTH_USER_MODEL = 'users.CustomUser'  
 
 
 REST_FRAMEWORK = {
@@ -189,7 +180,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-LOGIN_SUCCESS_URL = '/'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 

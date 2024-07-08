@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils import timezone
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from apps.doctors.models import Doctor
 from apps.categories.models import Category
 from django.conf import settings
-from apps.users.models import CustomUser
+
 
 
 class Appointment (models.Model):

@@ -6,17 +6,17 @@ from django.conf import settings
 
 
 from apps.products.models import Medicine
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 
-User = get_user_model()
+# User = get_user_model()
 
 
 class Cart(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE,
-        related_name='cart',
-        verbose_name='Пользователь'
-    )
+    # user = models.OneToOneField(
+    #     User, on_delete=models.CASCADE,
+    #     related_name='cart',
+    #     verbose_name='Пользователь'
+    # )
 
     def __str__(self):
         return f"{self.user}"

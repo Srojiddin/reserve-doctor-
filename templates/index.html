@@ -121,6 +121,11 @@
                         <span class="flaticon-calendar"></span>
                         <h2>Make an Appointment</h2>
                     </div>
+                    {% if not user.is_authenticated %}
+                    <div class="alert alert-warning" style="background-color: SteelBlue; color: white;">
+                        <p>Вы не авторизованы. Пожалуйста, <a href="{% url 'login' %}" style="color: white; text-decoration: underline;">авторизуйтесь</a>.</p>
+                    </div>
+                    {% endif %}
                     <div class="form-holder clearfix">
                         <form id="appointment" class="clearfix" name="appointment-form" action="{% url 'create-appointments' %}" method="post">
                             {% csrf_token %}
@@ -142,8 +147,8 @@
                                     <select name="choosing_a_disease" class="selectmenu">
                                         <option selected="selected">Select Department</option>
                                         {% for doctor in doctors %}
-                                        <option value="{{  doctor.id }}">{{ doctor.choosing_a_specialization }}</option>
-                                    {% endfor %}
+                                            <option value="{{ doctor.id }}">{{ doctor.choosing_a_specialization }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                                 <div class="input-box">

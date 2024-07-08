@@ -1,4 +1,6 @@
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
@@ -6,11 +8,12 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.csrf import csrf_protect
 # from apps.users.models import Account
+from django.contrib import messages
+
 
 from apps.doctors.models import Doctor
 from apps.users.forms import UserCreationForm, UserUpdateForm, RegisterForm, UserLoginForm
 from django.views.generic import DeleteView, TemplateView
-from django.contrib.auth.models import User
 from django.views import View
 
 
@@ -26,13 +29,26 @@ class IndexView(TemplateView):
 
         return context
 
+    
 
-class UserCreateView(generic.CreateView):
+class SuperuserRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class UserCreateView(SuperuserRequiredMixin, LoginRequiredMixin, generic.CreateView):
     model = User
-    form_class = UserCreationForm
-    template_name = 'users/account.html'
-    success_url = '/'
+    form_class = RegisterForm
+    template_name = 'login-form/register.html'
+    success_url = reverse_lazy('index')
 
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['usernames'] = User.objects.values_list('username', flat=True).distinct()
+        context['emails'] = User.objects.values_list('email', flat=True).distinct()
+        return context
 
 class UserDetailView(generic.DetailView):
     model = User
@@ -63,43 +79,16 @@ class UserDeleteView(DeleteView):
     success_url = '/index.html'
 
 
-# class RegisterView(View):
-#     def get(self, request):
-#         form = UserCreationForm()
-#         return render(request, 'login-form/register.html', {'form': form})
-
-#     def post(self, request):
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             login(request, user)
-#             return redirect(reverse_lazy('home'))
-#         return render(request, 'login-form/register.html', {'form': form})
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 
-# class LoginView(View):
-#     def get(self, request):
-#         form = UserLoginForm()
-#         return render(request, 'login-form/register.html', {'form': form})
-
-#     def post(self, request):
-#         form = UserLoginForm(request, data=request.POST)
-#         if form.is_valid():
-#             user = form.get_user()
-#             login(request, user)
-#             return redirect('/')
-#         return render(request, 'login-form/register.html', {'form': form})
-
-# @login_required
-# def logout_view(request):
-#     logout(request)
-#     return redirect('home')
-
-
-# Ваш файл views.py
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from .forms import UserRegistrationForm
+# # Ваш файл views.py
+# from django.shortcuts import render, redirect
+# from django.contrib.auth.models import User
+# from .forms import UserRegistrationForm
 
 
 
@@ -126,72 +115,3 @@ from .forms import UserRegistrationForm
 
 #     return render(request, 'login-form/register.html', {'form': form})
 
-
-
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserRegistrationForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             username = form.cleaned_data.get('username')
-#             password = form.cleaned_data.get('password1')
-#             is_admin = form.cleaned_data.get('is_admin')
- 
-            
-#             if is_admin:
-#                 if user.is_staff: 
-#                     user = User.objects.create_superuser(username=username, password=password)
-#                 else:
-#                     return redirect('registration_failed')
-#             else:
-#                 user = User.objects.create_user(username=username, password=password)
-
-#             return redirect('index.html')
-
-#             # Автоматически входим пользователя после регистрации
-#             user = authenticate(username=username, password=password)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('index.html')  # Замените на ваше имя URL-а успеха
-
-#     else:
-#         form = UserRegistrationForm()
-
-#     return render(request, 'login-form/register.html', {'form': form})
-
-
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserRegistrationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('index')  # Исправлено на ваше имя URL-а успеха
-#     else:
-#         form = UserRegistrationForm()
-
-#     return render(request, 'login-form/register.html', {'form': form})
-
-
-
-def register(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password1']
-            is_admin = form.cleaned_data['is_admin']  # Если требуется
-
-            # Создание пользователя
-            user = CustomUser.objects.create_user(username=username, email=email, password=password)
-
-            # Автоматически входим пользователя после регистрации
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('index.html')  # Замените на ваше имя URL-а успеха
-
-    else:
-        form = UserRegistrationForm()
-
-    return render(request, 'login-form/register.html', {'form': form})
